@@ -4,6 +4,7 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
+import projectRoutes from './routes/projectRoutes'
 
 dotenv.config()
 const app = express()
@@ -18,6 +19,8 @@ app.use(cors())
 app.get('/', (req, res) => {
   res.send('Hello World')
 })
+
+app.use('/api/projects', projectRoutes)
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
