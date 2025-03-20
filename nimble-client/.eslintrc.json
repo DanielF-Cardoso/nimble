@@ -2,7 +2,8 @@
   "root": true,
   "extends": [
     "next/core-web-vitals",
-    "plugin:tailwindcss/recommended"
+    "plugin:tailwindcss/recommended",
+    "@rocketseat/eslint-config/next"
   ],
   "parser": "@typescript-eslint/parser"
 }
