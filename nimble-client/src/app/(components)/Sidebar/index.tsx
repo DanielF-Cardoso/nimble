@@ -22,11 +22,13 @@ import React, { useState } from 'react'
 import SidebarLinks from '../SidebarLinks'
 import { setIsSidebarCollapsed } from '@/state'
 import { useAppDispatch, useAppSelector } from '@/app/redux'
+import { useGetProjectsQuery } from '@/state/api'
 
 const Sidebar = () => {
   const [showProjects, setShowProjects] = useState(true)
   const [showPriority, setShowPriority] = useState(true)
 
+  const { data: projects } = useGetProjectsQuery()
   const dispatch = useAppDispatch()
   const isSidebarCollapsed = useAppSelector(
     (state) => state.global.isSidebarCollapsed,
@@ -97,6 +99,16 @@ const Sidebar = () => {
             <ChevronDown className="size-5" />
           )}
         </button>
+
+        {showProjects &&
+          projects?.map((project) => (
+            <SidebarLinks
+              key={project.id}
+              icon={Briefcase}
+              label={project.name}
+              href={`/projects/${project.id}`}
+            />
+          ))}
 
         {/* Prioridades */}
         <button
