@@ -5,5 +5,9 @@
     "plugin:tailwindcss/recommended",
     "@rocketseat/eslint-config/next"
   ],
-  "parser": "@typescript-eslint/parser"
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "tailwindcss/no-custom-classname": "off",
+    "@typescript-eslint/no-explicit-any": "off"
+  }
 }
