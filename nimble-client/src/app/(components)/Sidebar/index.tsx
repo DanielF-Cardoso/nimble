@@ -37,7 +37,7 @@ const Sidebar = () => {
   return (
     <div
       className={`fixed z-40 flex h-full ${isSidebarCollapsed ? 'hidden w-0' : 'w-64'} flex-col justify-between overflow-y-auto
-     bg-white shadow-xl transition-all duration-300 dark:bg-black`}
+     bg-white shadow-xl transition-all duration-300 dark:bg-black `}
     >
       <div className="flex size-full flex-col justify-start">
         {/* Logo */}
@@ -106,7 +106,7 @@ const Sidebar = () => {
               key={project.id}
               icon={Briefcase}
               label={project.name}
-              href={`/projects/${project.id}`}
+              href={`/projetos/${project.id}`}
             />
           ))}
 
